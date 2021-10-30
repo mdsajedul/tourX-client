@@ -1,0 +1,15 @@
+.banner-img{
+    filter: blur(1.5px);
+}
+.carosel-style h1{
+    margin-top: -200px;
+    font-size: 78px;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 480px) {
+    .carosel-style h1{
+        font-size: 18px;
+        margin-top: 0;
+    }
+   }
