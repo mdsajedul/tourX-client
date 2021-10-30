@@ -1,0 +1,24 @@
+.image-container{
+    overflow: hidden;
+}
+.image-style{
+    height:225px;
+    width: 370px;
+    transition: transform .5s;
+}
+.image-style:hover{
+    transform: scale(1.1);
+}
+
+.content-conteiner{
+    width: 370px;
+    padding: 5px;
+}
+.content-conteiner p{
+    font-size: 18px;
+    color: #262339;
+    font-weight:500;
+}
+.location{
+    color: #FF7F47;
+}
