@@ -1,0 +1,9 @@
+.my-bookings-container{
+    background-color: whitesmoke;
+}
+.bookings-header{
+    background-color: #FF7F47;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

@@ -19,11 +19,16 @@ const Header = () => {
                         <Nav.Link as={HashLink} to="/home#package">Packages</Nav.Link>
                         </Nav>
                         <Nav>
-                        {user?.email &&
-                            <Navbar.Text>
-                                 Hello,<span className="user-name">{user?.displayName}</span>
-                            </Navbar.Text>
-                        }
+                            
+                            {user?.email &&
+                            <div className="login-related-link">
+                                 <Nav.Link  as={HashLink} to="/mybookings">My Bookings</Nav.Link>
+                                 <Navbar.Text className="disply-name">
+                                    Hello,<span className="user-name">{user?.displayName}</span>
+                                </Navbar.Text>
+                            </div>
+                               
+                            }
                             {user?.email ?
                             <button className="btn-logout" onClick={logOut} variant="light">Logout</button> :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>}

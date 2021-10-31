@@ -19,3 +19,9 @@
     color: #262339;
     font-weight: 500;
 }
+.login-related-link{
+    display: inline-flex;
+}
+.disply-name{
+    padding-left: 20px;
+}
