@@ -12,8 +12,22 @@ const MyBookings = () => {
         .then(data=>setBookings(data))
     },[])
 
-    const deleteHandler=()=>{
-        
+    const deleteHandler=(id)=>{
+        const alertDelete = window.confirm('Are you sure?');
+        if(alertDelete){
+            const url = `http://localhost:5000/bookings/${id}`;
+            fetch(url,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.deletedCount > 0){
+                    alert('Successfully Deleted Booking');
+                    const remainningBookings = bookings.filter(booking => booking._id !==id);
+                    setBookings(remainningBookings);
+                }
+            });
+        }
     }
 
     return (
@@ -35,7 +49,7 @@ const MyBookings = () => {
                                     <h5>{booking.packageName}</h5>
                                 </div>
                                 <div>
-                                    <button onClick={deleteHandler} className="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                                    <button onClick={()=>deleteHandler(booking._id)} className="delete-btn"><i class="fas fa-trash-alt"></i></button>
                                 </div>
                             </div>
                             
