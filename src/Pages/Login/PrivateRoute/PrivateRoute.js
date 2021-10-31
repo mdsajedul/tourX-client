@@ -4,22 +4,26 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 
 
+
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth()
+    console.log(user.email)
     if (isLoading) {
-        return <Spinner animation="border" variant="danger" />
-    }
+        return <div className="d-flex justify-content-center mt-5"><Spinner animation="grow" /></div>
+    } 
     return (
         <Route
             {...rest}
-            render={({ location }) => user.email ? children : <Redirect
+            render={({ location }) => user.email? children : <Redirect
                 to={{
                     pathname: "/login",
                     state: { from: location }
                 }}
             ></Redirect>
+
             }
         >
+
         </Route>
     );
 };

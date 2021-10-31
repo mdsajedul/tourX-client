@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import "./packageDetails.css";
 import useAuth from '../../Hooks/useAuth';
+import axios from 'axios';
 
 const PackageDetails = () => {
     const {packageId} = useParams();
@@ -18,7 +19,15 @@ const PackageDetails = () => {
     
 
     const onSubmit = data => {
-        console.log(data);
+        data.packageName = travelPackage?.name;
+        axios.post('http://localhost:5000/bookings',data)
+        .then(res=>{
+            console.log(res);
+            if(res.data.insertedId){
+                alert('Successfully added!')
+                reset();
+            }
+        })
     }
     
     return (
@@ -59,6 +68,9 @@ const PackageDetails = () => {
                                     </div>
                                     <div>
                                         <input type="text" {...register("age")}  placeholder="Your Age"/>
+                                    </div>
+                                    <div>
+                                        <input type="text" {...register("address")}  placeholder="Your Address"/>
                                     </div>
 
                                     <input type="submit" />
