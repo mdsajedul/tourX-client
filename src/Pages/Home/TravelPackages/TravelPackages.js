@@ -15,7 +15,7 @@ const TravelPackages = () => {
                 <h4>Choose Your Package</h4>
                 <h1>Select Your Best Package <br /> For Your Travel</h1>
             </div>
-            <div className="row gx-0">
+            <div className="row gx-0 p-3">
                 {
                     packages.map(travelPackage=><TravelPackage key={travelPackage._id}
                         travelPackage={travelPackage} ></TravelPackage>)

@@ -1,17 +1,18 @@
+
 .image-container{
     overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .image-style{
-    height:225px;
-    width: 370px;
     transition: transform .5s;
+    width: 100%;
 }
 .image-style:hover{
     transform: scale(1.1);
 }
 
 .content-conteiner{
-    width: 370px;
     padding: 5px;
 }
 .content-conteiner p{
@@ -21,4 +22,23 @@
 }
 .location{
     color: #FF7F47;
+}
+
+.btn-book{
+    width: 100%;
+    border:none;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background-color: #FF7F47;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+.btn-book:active{
+    background-color:#be4f1f ;
 }
