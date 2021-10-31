@@ -1,0 +1,29 @@
+.package-banner{
+    background-image: url('https://i.ibb.co/Gvw5L7Q/package-Banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    filter: blur(2px);
+    filter: brightness(.5);
+    z-index: 0;
+}
+.package-content h1{
+    font-weight: bold;
+    color: white;
+    margin-top: -200px;
+    z-index: 1;
+}
+
+.package-img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.package-details h1{
+    color:#FF7F47;
+    font-weight: bold;
+}
+.hr-color{
+    color:#FF7F47;
+   
+}
