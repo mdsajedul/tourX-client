@@ -22,6 +22,7 @@ const Header = () => {
                             
                             {user?.email &&
                             <div className="login-related-link">
+                                 <Nav.Link  as={HashLink} to="/manageallbookings">Manage All Bookings</Nav.Link>
                                  <Nav.Link  as={HashLink} to="/mybookings">My Bookings</Nav.Link>
                                  <Navbar.Text className="disply-name">
                                     Hello,<span className="user-name">{user?.displayName}</span>

@@ -1,0 +1,29 @@
+.my-bookings-container{
+    background-color: whitesmoke;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.bookings-header{
+    background-color: #FF7F47;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.booking-content{
+    padding: 15px;
+    height: 50px;
+}
+ul{
+    list-style: none;
+}
+.aprove-btn{
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+}
+.delete-btn{
+    color: red;
+    border: none;
+    background-color: transparent;
+}

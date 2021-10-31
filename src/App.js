@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import MyBookings from './Pages/MyBookings/MyBookings';
+import ManageAllBookings from './Pages/ManageAllBookings/ManageAllBookings';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
                     </PrivateRoute>
                     <PrivateRoute exact path="/mybookings">
                        <MyBookings></MyBookings>
+                    </PrivateRoute>
+                    <PrivateRoute exact path="/manageallbookings">
+                       <ManageAllBookings></ManageAllBookings>
                     </PrivateRoute>
                     <Route exact path="/login">
                         <Login></Login>
