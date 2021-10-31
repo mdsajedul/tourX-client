@@ -7,3 +7,15 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+.booking-content{
+    padding: 15px;
+    height: 50px;
+}
+ul{
+    list-style: none;
+}
+.delete-btn{
+    color: red;
+    border: none;
+    background-color: transparent;
+}
