@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useForm } from "react-hook-form";
 import "./packageDetails.css";
 
 const PackageDetails = () => {
     const {packageId} = useParams();
+    const { register, handleSubmit,reset } = useForm();
     const [travelPackage,setTravelPackage]= useState({});
     useEffect(()=>{
         fetch(`http://localhost:5000/packages/${packageId}`)
         .then(res=>res.json())
         .then(data=>setTravelPackage(data));
     },[])
-    console.log(travelPackage)
+
+    
+
+    const onSubmit = data => {
+        console.log(data);
+    }
     
     return (
         <div>
@@ -34,8 +41,29 @@ const PackageDetails = () => {
                             <p>{travelPackage.overview}</p>
                         </div>
                     </div>
-                    <div className="col-lg-4 ">
+                    <div className="col-lg-4 mt-5 pe-5">
+                        <div className="right-part">
+                            <h3 className="text-center">Book This Package</h3>
+                            <div className="m-4">
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <div>
+                                        <input type="text" {...register("name", { required: true, maxLength: 20 })} placeholder="Your Full Name" />
+                                    </div>
+                                    <div>
+                                        <input type="text" {...register("email")}  placeholder="Your Email"/>
+                                    </div>
+                                    <div>
+                                        <input type="text" {...register("phone")}  placeholder="Your Contact Number"/>
+                                    </div>
+                                    <div>
+                                        <input type="text" {...register("age")}  placeholder="Your Age"/>
+                                    </div>
 
+                                    <input type="submit" />
+                                </form>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

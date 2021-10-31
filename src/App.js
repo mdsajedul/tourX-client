@@ -4,6 +4,7 @@ import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import Header from './Pages/Shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 import PackageDetails from './Pages/PackageDetails/PackageDetails';
+import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
                 </Route>
                 <Route exact path="/packagedetail/:packageId">
                     <PackageDetails></PackageDetails>
+                </Route>
+                <Route exact path="/login">
+                    <Login></Login>
                 </Route>
             </Switch>
         </Router>

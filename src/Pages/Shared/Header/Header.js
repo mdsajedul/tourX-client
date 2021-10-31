@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './header.css';
 
@@ -14,6 +15,9 @@ const Header = () => {
                         <Nav className="me-auto">
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#home">Packages</Nav.Link>
+                        </Nav>
+                        <Nav>
+                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
