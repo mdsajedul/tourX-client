@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import "./packageDetails.css";
+import useAuth from '../../Hooks/useAuth';
 
 const PackageDetails = () => {
     const {packageId} = useParams();
     const { register, handleSubmit,reset } = useForm();
     const [travelPackage,setTravelPackage]= useState({});
+    const {user} = useAuth()
     useEffect(()=>{
         fetch(`http://localhost:5000/packages/${packageId}`)
         .then(res=>res.json())
@@ -47,10 +49,10 @@ const PackageDetails = () => {
                             <div className="m-4">
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <div>
-                                        <input type="text" {...register("name", { required: true, maxLength: 20 })} placeholder="Your Full Name" />
+                                        <input type="text" {...register("name", { required: true, maxLength: 20 })} value={user?.displayName} placeholder="Your Full Name" />
                                     </div>
                                     <div>
-                                        <input type="text" {...register("email")}  placeholder="Your Email"/>
+                                        <input type="text" {...register("email")}  value={user?.email} placeholder="Your Email"/>
                                     </div>
                                     <div>
                                         <input type="text" {...register("phone")}  placeholder="Your Contact Number"/>

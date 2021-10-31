@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home/Home';
 import PackageDetails from './Pages/PackageDetails/PackageDetails';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
                     <Route exact path="/home">
                         <Home></Home>
                     </Route>
-                    <Route exact path="/packagedetail/:packageId">
+                    <PrivateRoute exact path="/packagedetail/:packageId">
                         <PackageDetails></PackageDetails>
-                    </Route>
+                    </PrivateRoute>
                     <Route exact path="/login">
                         <Login></Login>
                     </Route>

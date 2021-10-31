@@ -7,7 +7,7 @@ import three from '../../../Images/three.png';
 
 const Banner = () => {
     return (
-        <div>
+        <div id="home">
             <Carousel fade>
                 <Carousel.Item>
                     <img
