@@ -8,3 +8,14 @@
 .site-name-sub{
     color: #FF7F47;
 }
+.btn-logout{
+    text-decoration: none;
+    border: none;
+    background-color: #F8F9FA;
+    font-weight: 500;
+    color: red;
+}
+.user-name{
+    color: #262339;
+    font-weight: 500;
+}

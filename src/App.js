@@ -5,27 +5,30 @@ import Header from './Pages/Shared/Header/Header';
 import Home from './Pages/Home/Home/Home';
 import PackageDetails from './Pages/PackageDetails/PackageDetails';
 import Login from './Pages/Login/Login/Login';
+import AuthProvider from './contexts/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-        <Router>
-            <Header></Header>
-            <Switch>
-                <Route exact path="/">
-                    <Home></Home>
-                </Route>
-                <Route exact path="/home">
-                    <Home></Home>
-                </Route>
-                <Route exact path="/packagedetail/:packageId">
-                    <PackageDetails></PackageDetails>
-                </Route>
-                <Route exact path="/login">
-                    <Login></Login>
-                </Route>
-            </Switch>
-        </Router>
+        <AuthProvider>
+            <Router>
+                <Header></Header>
+                <Switch>
+                    <Route exact path="/">
+                        <Home></Home>
+                    </Route>
+                    <Route exact path="/home">
+                        <Home></Home>
+                    </Route>
+                    <Route exact path="/packagedetail/:packageId">
+                        <PackageDetails></PackageDetails>
+                    </Route>
+                    <Route exact path="/login">
+                        <Login></Login>
+                    </Route>
+                </Switch>
+            </Router>
+        </AuthProvider>
     </div>
   );
 }

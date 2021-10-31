@@ -42,7 +42,10 @@ const useFirebase = ()=>{
     }
     
     return{
-        user,isLoading,signInWithGoogle,logOut
+        user,
+        isLoading,
+        signInWithGoogle,
+        logOut
     }
 }
 
