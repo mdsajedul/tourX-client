@@ -20,6 +20,7 @@ const PackageDetails = () => {
 
     const onSubmit = data => {
         data.packageName = travelPackage?.name;
+        data.status='Pending';
         axios.post('http://localhost:5000/bookings',data)
         .then(res=>{
             console.log(res);
