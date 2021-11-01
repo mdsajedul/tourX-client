@@ -9,7 +9,7 @@ const TravelPackages = () => {
   
     useEffect(()=>{
         setLoading(true);
-        fetch('http://localhost:5000/packages')
+        fetch('https://agile-savannah-26154.herokuapp.com/packages')
         .then(res=>res.json())
         .then(data=>{
             setPackages(data);

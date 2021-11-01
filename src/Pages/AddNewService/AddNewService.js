@@ -8,7 +8,7 @@ const AddNewService = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/packages',data)
+        axios.post('https://agile-savannah-26154.herokuapp.com/packages',data)
         .then(res=>{
             if(res.data.insertedId){
                 alert('Successfully added!')
@@ -16,7 +16,7 @@ const AddNewService = () => {
             }
         })
     }
-
+   
     return (
         <div className="p-5">
              <div className="my-bookings-container w-100">

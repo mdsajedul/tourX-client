@@ -8,7 +8,7 @@ const ManageAllBookings = () => {
     const [booking,setBooking] = useState({status:'Approved'});
     const {user} = useAuth()
     useEffect(()=>{
-        fetch(`http://localhost:5000/bookings`)
+        fetch(`https://agile-savannah-26154.herokuapp.com/bookings/`)
         .then(res=>res.json())
         .then(data=>setBookings(data))
     },[booking])
@@ -16,7 +16,7 @@ const ManageAllBookings = () => {
     const deleteHandler=(id)=>{
         const alertDelete = window.confirm('Are you sure?');
         if(alertDelete){
-            const url = `http://localhost:5000/bookings/${id}`;
+            const url = `https://agile-savannah-26154.herokuapp.com/bookings/${id}`;
             fetch(url,{
                 method:'DELETE'
             })
@@ -31,13 +31,9 @@ const ManageAllBookings = () => {
         }
     }
     const aproveHandler=(id)=>{
-        // const findedBooking =   bookings.find(booking=>booking._id===id);
-        // const updateBooking = {name:findedBooking.name,email:findedBooking.email,phone:findedBooking.phone,age:findedBooking.age,address:findedBooking.address,packageName:findedBooking.packageName,status:'Approved'}
-        // setBooking(updateBooking);
-        // console.log(booking)
-        // console.log(findedBooking)
+        
         setBooking({status:'Approved'});
-        const url = `http://localhost:5000/bookings/${id}`;
+        const url = `https://agile-savannah-26154.herokuapp.com/bookings/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

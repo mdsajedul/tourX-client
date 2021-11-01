@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
+import useMyBookings from '../../Hooks/useMyBookings';
 import './myBookings.css';
 
 const MyBookings = () => {
-    const [bookings,setBookings] = useState([])
-    const [count,setCount] = useState(0);
-    const {user} = useAuth()
-    useEffect(()=>{
-        fetch(`http://localhost:5000/bookings/${user?.email}`)
-        .then(res=>res.json())
-        .then(data=>setBookings(data))
-    },[])
+
+    const {bookings,setBookings,count,setCount} = useMyBookings()
+
+    // const [bookings,setBookings] = useState([])
+    // const [count,setCount] = useState(0);
+    // const {user} = useAuth()
+    // useEffect(()=>{
+    //     fetch(`https://agile-savannah-26154.herokuapp.com/bookings/${user.email}`)
+    //     .then(res=>res.json())
+    //     .then(data=>setBookings(data))
+    // },[])
 
     const deleteHandler=(id)=>{
         const alertDelete = window.confirm('Are you sure?');
         if(alertDelete){
-            const url = `http://localhost:5000/bookings/${id}`;
+            const url = `https://agile-savannah-26154.herokuapp.com/bookings/${id}`;
             fetch(url,{
                 method:'DELETE'
             })
@@ -25,6 +29,7 @@ const MyBookings = () => {
                     alert('Successfully Deleted Booking');
                     const remainningBookings = bookings.filter(booking => booking._id !==id);
                     setBookings(remainningBookings);
+                    setCount(remainningBookings.length);
                 }
             });
         }
@@ -33,10 +38,13 @@ const MyBookings = () => {
     return (
         <div className="p-5">
             <div className="my-bookings-container w-100">
-                <div className="bookings-header  p-2">
+                <div className="bookings-header d-flex justify-content-between  p-2">
                     <div className="d-flex align-items-center">
                         <i class="fas fa-list pe-2"></i> 
                         <h4>My Bookings List</h4>
+                    </div>
+                    <div>
+                        <h4>Total Bookings: {count}</h4>
                     </div>
                 </div>
                 <div>

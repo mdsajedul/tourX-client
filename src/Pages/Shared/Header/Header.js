@@ -3,10 +3,12 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../Hooks/useAuth';
+import useMyBookings from '../../../Hooks/useMyBookings';
 import './header.css';
 
 const Header = () => {
     const {isLoading,user,logOut} = useAuth();
+    const {count} = useMyBookings()
     return (
         <>
             <Navbar sticky="top" className="nav-custom" collapseOnSelect expand="lg" bg="light" variant="light">
@@ -24,7 +26,7 @@ const Header = () => {
                             <div className="login-related-link">
                                 <Nav.Link  as={HashLink} to="/addnewservice">Add New Service</Nav.Link>
                                  <Nav.Link  as={HashLink} to="/manageallbookings">Manage All Bookings</Nav.Link>
-                                 <Nav.Link  as={HashLink} to="/mybookings">My Bookings</Nav.Link>
+                                 <Nav.Link  as={HashLink} to="/mybookings">My Bookings <span className="count-style">{count}</span></Nav.Link>
                                  <Navbar.Text className="disply-name">
                                     Hello,<span className="user-name">{user?.displayName}</span>
                                 </Navbar.Text>
