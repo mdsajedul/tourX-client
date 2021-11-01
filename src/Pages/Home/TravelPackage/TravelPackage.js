@@ -4,7 +4,6 @@ import './travelPack.css';
 
 const TravelPackage = ({travelPackage}) => {
     const {name,_id,image,duration,cost} = travelPackage;
-    console.log(travelPackage)
     return (
         <div className="col-lg-4 card-style gx-5 gy-5">
             <div className="image-container">

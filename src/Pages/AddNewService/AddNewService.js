@@ -22,7 +22,7 @@ const AddNewService = () => {
              <div className="my-bookings-container w-100">
                 <div className="bookings-header  p-2">
                     <div className="d-flex align-items-center">
-                    <i class="fas fa-plus-circle pe-2"></i> 
+                    <i className="fas fa-plus-circle pe-2"></i> 
                         <h4>Add New Package</h4>
                     </div>
                 </div>

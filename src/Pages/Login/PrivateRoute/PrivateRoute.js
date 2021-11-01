@@ -7,7 +7,6 @@ import useAuth from '../../../Hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth()
-    console.log(user.email)
     if (isLoading) {
         return <div className="d-flex justify-content-center mt-5"><Spinner animation="grow" /></div>
     } 

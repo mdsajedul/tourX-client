@@ -25,7 +25,7 @@ const TravelPackages = () => {
             <div className="d-flex justify-content-center">
                 {
                    isLoading && 
-                    <div class="spinner-grow text-dark"></div>
+                    <div className="spinner-grow text-dark"></div>
                 }
             </div>
             <div className="row gx-0 p-3">

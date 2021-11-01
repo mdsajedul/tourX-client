@@ -6,11 +6,16 @@ const ManageAllBookings = () => {
 
     const [bookings,setBookings] = useState([])
     const [booking,setBooking] = useState({status:'Approved'});
+    const [loading,setLoading] = useState(false);
     const {user} = useAuth()
     useEffect(()=>{
+        setLoading(true);
         fetch(`https://agile-savannah-26154.herokuapp.com/bookings/`)
         .then(res=>res.json())
-        .then(data=>setBookings(data))
+        .then(data=>{
+            setBookings(data);
+            setLoading(false);
+        })
     },[booking])
 
     const deleteHandler=(id)=>{
@@ -60,9 +65,16 @@ const ManageAllBookings = () => {
                     </div>
                 </div>
                 <div>
+
+                <div className="d-flex justify-content-center">
+                {
+                   loading && 
+                    <div className="spinner-grow text-dark"></div>
+                }
+                </div>
                     <ul>
                     {
-                        bookings.map(booking=> <li className="booking-content my-3">
+                        bookings.map(booking=> <li key={booking._id} className="booking-content my-3">
                             <div className="d-flex justify-content-between">
                                 <div className="d-flex align-items-center ">
                                     <i className="fas fa-chevron-right pe-2"></i>
@@ -71,7 +83,7 @@ const ManageAllBookings = () => {
                                 </div>
                                 <div>
                                     <button onClick={()=>aproveHandler(booking._id)} className="aprove-btn">Aprove</button>
-                                    <button onClick={()=>deleteHandler(booking._id)} className="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                                    <button onClick={()=>deleteHandler(booking._id)} className="delete-btn"><i className="fas fa-trash-alt"></i></button>
                                 </div>
                             </div>
                             

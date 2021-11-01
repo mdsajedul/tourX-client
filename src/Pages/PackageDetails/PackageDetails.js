@@ -11,7 +11,7 @@ const PackageDetails = () => {
     const [travelPackage,setTravelPackage]= useState({});
     const {user} = useAuth()
     useEffect(()=>{
-        fetch(`http://localhost:5000/packages/${packageId}`)
+        fetch(`https://agile-savannah-26154.herokuapp.com/packages/${packageId}`)
         .then(res=>res.json())
         .then(data=>setTravelPackage(data));
     },[])
@@ -21,7 +21,7 @@ const PackageDetails = () => {
     const onSubmit = data => {
         data.packageName = travelPackage?.name;
         data.status='Pending';
-        axios.post('http://localhost:5000/bookings',data)
+        axios.post('https://agile-savannah-26154.herokuapp.com/bookings',data)
         .then(res=>{
             console.log(res);
             if(res.data.insertedId){

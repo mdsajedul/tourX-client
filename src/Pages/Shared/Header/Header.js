@@ -9,6 +9,7 @@ import './header.css';
 const Header = () => {
     const {isLoading,user,logOut} = useAuth();
     const {count} = useMyBookings()
+    console.log(count)
     return (
         <>
             <Navbar sticky="top" className="nav-custom" collapseOnSelect expand="lg" bg="light" variant="light">

@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="news-letter d-flex justify-content-center">
                 <div>
                     <h2>Subscribe To Our Newsletter For Latest Update</h2>
-                    <div class="  mb-3 d-flex justify-content-center ">
+                    <div className="  mb-3 d-flex justify-content-center ">
                         <div className="d-flex align-items-center news-letter-content">
                             <input type="text" placeholder="Email"/>
                             <button className="btn-subs">Subscribe</button>

@@ -5,7 +5,7 @@ import './myBookings.css';
 
 const MyBookings = () => {
 
-    const {bookings,setBookings,count,setCount} = useMyBookings()
+    const {bookings,setBookings,count,setCount,loading,setLoading} = useMyBookings()
 
     // const [bookings,setBookings] = useState([])
     // const [count,setCount] = useState(0);
@@ -40,7 +40,7 @@ const MyBookings = () => {
             <div className="my-bookings-container w-100">
                 <div className="bookings-header d-flex justify-content-between  p-2">
                     <div className="d-flex align-items-center">
-                        <i class="fas fa-list pe-2"></i> 
+                        <i className="fas fa-list pe-2"></i> 
                         <h4>My Bookings List</h4>
                     </div>
                     <div>
@@ -48,17 +48,23 @@ const MyBookings = () => {
                     </div>
                 </div>
                 <div>
+                <div className="d-flex justify-content-center">
+                {
+                   loading && 
+                    <div className="spinner-grow text-dark"></div>
+                }
+            </div>
                     <ul>
                     {
-                        bookings.map(booking=> <li className="booking-content my-3">
+                        bookings.map(booking=> <li key={booking._id} className="booking-content my-3">
                             <div className="d-flex justify-content-between">
                                 <div className="d-flex align-items-center ">
-                                    <i class="fas fa-chevron-right pe-2"></i>
+                                    <i className="fas fa-chevron-right pe-2"></i>
                                     <h5>{booking.packageName}</h5>
                                     <p className="ps-3">Status: {booking.status}</p>
                                 </div>
                                 <div>
-                                    <button onClick={()=>deleteHandler(booking._id)} className="delete-btn"><i class="fas fa-trash-alt"></i></button>
+                                    <button onClick={()=>deleteHandler(booking._id)} className="delete-btn"><i className="fas fa-trash-alt"></i></button>
                                 </div>
                             </div>
                             
