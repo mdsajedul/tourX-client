@@ -10,6 +10,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import MyBookings from './Pages/MyBookings/MyBookings';
 import ManageAllBookings from './Pages/ManageAllBookings/ManageAllBookings';
 import Footer from './Pages/Shared/Footer/Footer';
+import AddNewService from './Pages/AddNewService/AddNewService';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
                     </Route>
                     <PrivateRoute exact path="/packagedetail/:packageId">
                         <PackageDetails></PackageDetails>
+                    </PrivateRoute>
+                    <PrivateRoute exact path="/addnewservice">
+                        <AddNewService></AddNewService>
                     </PrivateRoute>
                     <PrivateRoute exact path="/mybookings">
                        <MyBookings></MyBookings>

@@ -1,0 +1,24 @@
+.my-bookings-container{
+    background-color: whitesmoke;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.bookings-header{
+    background-color: #FF7F47;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.booking-content{
+    padding: 15px;
+    height: 50px;
+}
+.fas{
+    font-size: 32px;
+}
+
+.design textarea{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
