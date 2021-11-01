@@ -49,7 +49,7 @@ const ManageAllBookings = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('Update Successful');
-                    window.location.href = '/manageallbookings'
+                    window.location.href = '/manageallbookings';
                 }
             })
     }

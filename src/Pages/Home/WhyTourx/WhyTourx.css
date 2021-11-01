@@ -1,0 +1,25 @@
+.why-header {
+    margin: 30px;
+   text-align: center;
+}
+.why-header h4{
+    color: #FF7F47;
+}
+.why-header h1{
+    color: #262339;
+    font-weight: 700;
+}
+.why-card{
+   text-align: center; 
+   color: white;
+   padding: 15px;
+}
+.card{
+    text-align: center; 
+    padding: 15px;
+    background-color:#315048 !important ;
+    color: white;
+}
+.why-card-icon{
+    font-size: 62px;
+}
