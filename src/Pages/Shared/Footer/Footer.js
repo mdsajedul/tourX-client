@@ -22,7 +22,7 @@ const Footer = () => {
                 <div className="row gx-0 ">
                     <div className="col-lg-4 mt-5 p-5">
                         <h1>Tour<span>X</span></h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid maxime aut ut voluptate dolorum nisi ducimus ratione</p>
+                        <p>TourX is a one of the world largest tourism company. We have huge tourism agency network. We have millions of satisfied customer.</p>
                     </div>
                     <div className="col-lg-4 mt-5 p-5">
                         <h3>Contuct Us</h3>
