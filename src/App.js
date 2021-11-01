@@ -9,6 +9,7 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import MyBookings from './Pages/MyBookings/MyBookings';
 import ManageAllBookings from './Pages/ManageAllBookings/ManageAllBookings';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
                         <Login></Login>
                     </Route>
                 </Switch>
+                <Footer></Footer>
             </Router>
         </AuthProvider>
     </div>

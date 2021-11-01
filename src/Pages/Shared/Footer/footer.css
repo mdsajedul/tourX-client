@@ -1,0 +1,41 @@
+.news-letter{
+    background-color: #315048;
+    color: white;
+    padding: 25px;
+    margin: 50px;
+    border-radius: 10px;
+    z-index: 1;
+    position:relative;
+   
+}
+.btn-subs{
+    height: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #FF7F47;
+}
+.news-letter-content{
+    width: 70%
+}
+
+.main-footer{
+   
+   margin-top: -90px;
+   z-index: 0;
+    background-color: #262339;
+    color: white;
+}
+
+.social-icon{
+    font-size: 42px;
+}
+.fab{
+    padding-right: 10px;
+    color: white;
+}
+.tourx-color{
+    color: #FF7F47;
+    font-weight: bold;
+}
