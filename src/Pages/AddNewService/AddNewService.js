@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import './addNewService.css'
@@ -7,6 +8,13 @@ const AddNewService = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
         console.log(data)
+        axios.post('http://localhost:5000/packages',data)
+        .then(res=>{
+            if(res.data.insertedId){
+                alert('Successfully added!')
+                reset();
+            }
+        })
     }
 
     return (
