@@ -1,0 +1,20 @@
+.traveller-haeder{
+    margin: 30px;
+   text-align: center;
+}
+.traveller-haeder h4{
+    color: #FF7F47;
+}
+.traveller-haeder h1{
+    color: #262339;
+    font-weight: 700;
+}
+.traveller-img{
+    border-radius: 50%;
+}
+.card-traveller{
+    border-radius: 10px;
+    height: 200px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
