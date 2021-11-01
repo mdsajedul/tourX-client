@@ -8,8 +8,10 @@ import './header.css';
 
 const Header = () => {
     const {isLoading,user,logOut} = useAuth();
-    const {count} = useMyBookings()
-    console.log(count)
+    const {count,bookings,setCount} = useMyBookings();
+    
+
+    console.log(count) 
     return (
         <>
             <Navbar sticky="top" className="nav-custom" collapseOnSelect expand="lg" bg="light" variant="light">
@@ -27,7 +29,7 @@ const Header = () => {
                             <div className="login-related-link">
                                 <Nav.Link  as={HashLink} to="/addnewservice">Add New Service</Nav.Link>
                                  <Nav.Link  as={HashLink} to="/manageallbookings">Manage All Bookings</Nav.Link>
-                                 <Nav.Link  as={HashLink} to="/mybookings">My Bookings <span className="count-style">{count}</span></Nav.Link>
+                                 <Nav.Link  as={HashLink} to="/mybookings">My Bookings <span className="count-style">{bookings?.length}</span></Nav.Link>
                                  <Navbar.Text className="disply-name">
                                     Hello,<span className="user-name">{user?.displayName}</span>
                                 </Navbar.Text>
